@@ -196,7 +196,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
         _gameTimeNum--;
         _gameStartTime++;
         if (mode === MODE_NORMAL && _gameTimeNum <= 0) {
-            GameTimeLayer.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;时间到！';
+            GameTimeLayer.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;内卷时间到！';
             gameOver();
             GameLayerBG.className += ' flash';
             if (soundMode === 'on') {
@@ -213,7 +213,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
             }
         } else if (mode === MODE_ENDLESS) {
             let cps = getCPS();
-            let text = (cps === 0 ? '计算中' : cps.toFixed(2));
+            let text = (cps === 0 ? '内卷中' : cps.toFixed(2));
             GameTimeLayer.innerHTML = `CPS:${text}`;
         } else {
             GameTimeLayer.innerHTML = `SCORE:${_gameScore}`;
@@ -465,11 +465,11 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
             SubmitResults();
         }
 
-        if (cps <= 5) return '试着好好练一下？';
-        if (cps <= 8) return 'TCL';
-        if (cps <= 10)  return 'TQL';
-        if (cps <= 15) return '您';
-        return '人？';
+        if (cps <= 5) return '卷的不细致？';
+        if (cps <= 8) return '666';
+        if (cps <= 10)  return '别卷了';
+        if (cps <= 15) return '卷王';
+        return '卷狗？';
     }
 
     function toStr(obj) {
